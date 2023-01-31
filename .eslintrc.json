@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "mocha": true
+  },
+  "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+  },
+  "rules": {
+    "class-methods-use-this": "off",
+    "function-paren-newline": ["error", "never"],
+    "key-spacing": ["error", { "align": "value" }],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "max-len": ["error", { "code": 120, "ignoreStrings": true }],
+    "import/extensions": ["error", { "js": "always" }],
+    "func-names": ["error", "never"]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "covid-got",
+  "version": "0.1.0",
+  "description": "API test framework using got for COVID API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianrenauld/covid-got"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Ian Renauld <ianrenauld@gmail.com>",
+  "type": "module",
+  "dependencies": {
+    "got": "^12.5.2",
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-base": "^15.0.0"
+  }
+}
