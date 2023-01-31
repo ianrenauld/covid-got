@@ -1,0 +1,24 @@
+import assert from 'node:assert';
+import CovidAPI from '../../pages/covid/covidApi.js';
+import Utils from '../../pages/covid/utils.js';
+
+describe('COVID Tests', () => {
+  before(async function () {
+    this.euroData = await CovidAPI.getDataByRegion('northamerica');
+    // this.toto = euroData;
+  });
+
+  describe('C0001 - As a User I can get the 3 Euro countries with highest death total', () => {
+    it('should get all euro countries', async function () {
+      assert(this.euroData.length > 0, 'Expected: European data is received but was not');
+    });
+
+    it('should list top 3 European countries with highest death total', async function () {
+      const top3Data = Utils.getTopEntriesByCriteria(this.euroData, 3, 'TotalDeaths');
+      // We definitely need to discuss philosophy of testing because this assert is not proper testing
+      assert(top3Data.length == 3, 'Expected: Top 3 countries are returned but are not');
+      const top3Countries = top3Data.map((country) => { return country.Country });
+      console.log(`Top 3 countries are: ${top3Countries}`);
+    });
+  });
+});
