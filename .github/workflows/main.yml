@@ -13,11 +13,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 
+      - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '18.x'
       - name: Install dependencies
-        run: npm install
+        run: npm install --production
       - name: Run tests
         run: APIKEY=${{ secrets.APIKEY }} npm test
